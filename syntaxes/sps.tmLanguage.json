@@ -12,6 +12,12 @@
       "include": "#keywords"
     },
     {
+      "include": "#idfix"
+    },
+    {
+      "include": "#plcvariables"
+    },
+    {
       "include": "#variables"
     },
     {
@@ -48,6 +54,10 @@
           "name": "string.quoted.include.sps",
           "begin": "(?<=#Include\\s+)[\"<]",
           "end": "[\">]"
+        },
+        {
+          "name": "keyword.control.export.sps",
+          "match": "\\bExport\\b"
         }
       ]
     },
@@ -56,6 +66,54 @@
         {
           "name": "keyword.special.pmver.sps",
           "match": "\\bpmver\\b"
+        },
+        {
+          "name": "keyword.other.sps",
+          "match": "\\b(?:Export|Static|Non_Inv|No_Filt|A_Pulse|B_Pulse|C_Pulse|OPT_S|Pgm_Pluto|Instruction_Set_3)\\b"
+        }
+      ]
+    },
+    "idfix": {
+      "patterns": [
+        {
+          "name": "constant.numeric.idfix.sps",
+          "match": "\\b[0-9A-F]{12}\\b"
+        }
+      ]
+    },
+    "plcvariables": {
+      "patterns": [
+        {
+          "name": "variable.language.input.sps",
+          "match": "\\bI\\d+\\.\\d+\\b"
+        },
+        {
+          "name": "variable.language.output.sps",
+          "match": "\\bQ\\d+\\.\\d+\\b"
+        },
+        {
+          "name": "variable.language.globalmemory.sps",
+          "match": "\\bGM\\d+\\.\\d+\\b"
+        },
+        {
+          "name": "variable.language.memory.sps",
+          "match": "\\bM\\d+\\.\\d+\\b"
+        },
+        {
+          "name": "variable.language.register.sps",
+          "match": "\\bR\\d+\\.\\d+\\b"
+        },
+        {
+          "name": "variable.language.doubleregister.sps",
+          "match": "\\bDR\\d+\\.\\d+\\.\\d+\\b"
+        },
+        {
+          "name": "variable.language.systemmemory.sps",
+          "match": "\\bSM\\d+\\.\\d+\\b"
+        },
+        {
+          "name": "variable.language.systemregister.sps",
+          "match": "\\bSR\\d+\\.\\d+\\b"
         }
       ]
     },
