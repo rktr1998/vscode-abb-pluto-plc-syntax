@@ -69,7 +69,7 @@
         },
         {
           "name": "keyword.other.sps",
-          "match": "\\b(?:Export|Static|Non_Inv|No_Filt|A_Pulse|B_Pulse|C_Pulse|OPT_S|Pgm_Pluto|Instruction_Set_3)\\b"
+          "match": "\\b(?:Export|Static|Non_Inv|No_Filt|A_Pulse|B_Pulse|C_Pulse|OPT_R|OPT_S|Pgm_Pluto|Instruction_Set_3)\\b"
         }
       ]
     },
