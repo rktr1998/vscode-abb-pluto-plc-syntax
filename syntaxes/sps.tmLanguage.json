@@ -1,0 +1,82 @@
+{
+  "name": "sps",
+  "scopeName": "source.sps",
+  "patterns": [
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#directives"
+    },
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#variables"
+    },
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#numbers"
+    }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "keyword.control.directive.sps",
+          "match": "#[A-Za-z_][A-Za-z0-9_]*"
+        },
+        {
+          "name": "variable.language.special.sps",
+          "match": "\\$[A-Za-z_][A-Za-z0-9_]*"
+        },
+        {
+          "name": "comment.line.semicolon.sps",
+          "match": ";.*$"
+        }
+      ]
+    },
+    "directives": {
+      "patterns": [
+        {
+          "name": "keyword.control.include.sps",
+          "match": "\\b#Include\\b"
+        },
+        {
+          "name": "string.quoted.include.sps",
+          "begin": "(?<=#Include\\s+)[\"<]",
+          "end": "[\">]"
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.special.pmver.sps",
+          "match": "\\bpmver\\b"
+        }
+      ]
+    },
+    "variables": {
+      "patterns": [
+        {
+          "name": "variable.other.sps",
+          "match": "\\b[A-Za-z][A-Za-z0-9_\\.]*\\b"
+        }
+      ]
+    },
+    "strings": {
+      "name": "string.quoted.double.sps",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "name": "constant.character.escape.sps",
+          "match": "\\\\."
+        }
+      ]
+    }
+  }
+}
